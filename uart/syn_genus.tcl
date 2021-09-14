@@ -9,7 +9,7 @@ read_hdl [glob 1_rtl/*.v]
 elaborate uart_top
 
 # 4. Check Design
-check_design > log/3.check_design.log
+check_design > log/check_design.log
 
 uniquify uart_top
 
@@ -20,11 +20,12 @@ source constraints.tcl
 synthesize -to_mapped -effort h
 
 # 7. Write netlist
-write -mapped > 2_syn_out/$top.v
-write_sdc > 2_syn_out/$top.sdc
+write -mapped > 2_syn_out/uart_top.v
+write_sdc > 2_syn_out/uart_top.sdc
 
 # 8. Reports
 report_area > report/area.log
 report_timing  -nworst 10 > report/timing.log
 report_constraint > report/constraint.log
 report_port * > report/ports_final.log
+report_power > report/power.log
