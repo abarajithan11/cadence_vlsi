@@ -19,7 +19,6 @@ echo "IO Ports Check"
 # echo $design_inputs
 # echo $design_inputs
 
-set top uart_top
 set_clock_uncertainty 0.5 [all_clocks]
 set_dont_touch_network [all_clocks]
 set_dont_touch_network [get_ports {reset_a reset_b}]
