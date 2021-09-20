@@ -1,12 +1,12 @@
 # ####################################################################
 
-#  Created by Genus(TM) Synthesis Solution 18.10-p003_1 on Tue Sep 14 13:43:10 +0530 2021
+#  Created by Genus(TM) Synthesis Solution 18.10-p003_1 on Mon Sep 20 14:44:10 +0530 2021
 
 # ####################################################################
 
 set sdc_version 2.0
 
-set_units -capacitance 1.0fF
+set_units -capacitance 1000.0fF
 set_units -time 1000.0ps
 
 # Set the current design
@@ -132,21 +132,7 @@ set_max_fanout 20.000 [get_ports tx_data_wr_enable_in_b]
 set_max_fanout 20.000 [get_ports rx_data_rd_enable_in_b]
 set_dont_touch_network [get_ports reset_a]
 set_dont_touch_network [get_ports reset_b]
-set_wire_load_mode "enclosed"
-set_dont_use [get_lib_cells saed32hvt_ss0p7v125c/ANTENNA_HVT]
-set_dont_use [get_lib_cells saed32hvt_ss0p7v125c/BUSKP_HVT]
-set_dont_use [get_lib_cells saed32hvt_ss0p7v125c/CLOAD1_HVT]
-set_dont_use [get_lib_cells saed32hvt_ss0p7v125c/DCAP_HVT]
-set_dont_use [get_lib_cells saed32hvt_ss0p7v125c/DHFILLH2_HVT]
-set_dont_use [get_lib_cells saed32hvt_ss0p7v125c/DHFILLHL2_HVT]
-set_dont_use [get_lib_cells saed32hvt_ss0p7v125c/DHFILLHLHLS11_HVT]
-set_dont_use [get_lib_cells saed32hvt_ss0p7v125c/SHFILL128_HVT]
-set_dont_use [get_lib_cells saed32hvt_ss0p7v125c/SHFILL1_HVT]
-set_dont_use [get_lib_cells saed32hvt_ss0p7v125c/SHFILL2_HVT]
-set_dont_use [get_lib_cells saed32hvt_ss0p7v125c/SHFILL3_HVT]
-set_dont_use [get_lib_cells saed32hvt_ss0p7v125c/SHFILL64_HVT]
-set_dont_use [get_lib_cells saed32hvt_ss0p7v125c/TIEH_HVT]
-set_dont_use [get_lib_cells saed32hvt_ss0p7v125c/TIEL_HVT]
+set_dont_use [get_lib_cells fast_vdd1v0/HOLDX1]
 set_clock_uncertainty -setup 0.5 [get_clocks clk_a]
 set_clock_uncertainty -hold 0.5 [get_clocks clk_a]
 set_clock_uncertainty -setup 0.5 [get_clocks clk_b]
